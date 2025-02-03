@@ -1,0 +1,119 @@
+import { EnvelopeIcon, MapIcon, PhoneIcon } from "@heroicons/react/24/solid";
+import React from "react";
+import { Link } from "react-scroll";
+
+const Footer = () => {
+	return (
+		<div className="pt-[5rem] pb-[3rem] bg-black">
+			<div className="w-[80%] mx-auto grid-cols-1 md:grid-cols-2 grid lg:grid-cols-3 gap-[2rem] border-b-[1.4px] pb-5 border-gray-600 border-opacity-40">
+				<div>
+					<div className="font-logo text-white text-[18px]">
+						<span className="text-[30px] md:text[40px] text-red-500">M.</span>
+						Talha
+					</div>
+					<h1 className="text-[14px] mt-[0.5rem] text-white opacity-70">
+						I’m a passionate web developer specializing in React, WordPress, and
+						digital marketing. I create sleek, responsive websites and
+						user-friendly dashboards to enhance digital experiences.
+					</h1>
+					{/* <p className="mt-[1.3rem] text-red-500 underline font-semibold">
+						talhashabbir109@gmail.com
+					</p> */}
+				</div>
+				<div className="md:mx-auto">
+					<h1 className="text-white font-semibold mb-[1.4rem] text-[17px]">
+						Quick Link
+					</h1>
+					<p className="text-[15px] text-white opacity-80 mb-[1rem] cursor-pointer hover:text-red-500">
+						<Link
+							to="about"
+							smooth={true}
+							duration={500}
+							className=" cursor-pointer"
+						>
+							About
+						</Link>
+					</p>
+					<p className="text-[15px] text-white opacity-80 mb-[1rem] cursor-pointer hover:text-red-500">
+						Services
+					</p>
+					<p className="text-[15px] text-white opacity-80 mb-[1rem] cursor-pointer hover:text-red-500">
+						Project
+					</p>
+					<p className="text-[15px] text-white opacity-80 mb-[1rem] cursor-pointer hover:text-red-400">
+						Contact
+					</p>
+				</div>
+				<div className="lg:mx-auto">
+					<h1 className="text-white font-semibold mb-[1.4rem] text-[17px]">
+						Address
+					</h1>
+					<div className="flex items-center mt-[1rem] space-x-2">
+						<a
+							href="https://www.google.com/maps/dir/?api=1&destination=Lahore,Mughalpura"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<MapIcon className="w-[1rem] h-[1rem] text-red-500" />
+						</a>
+						<a
+							href="https://www.google.com/maps/dir/?api=1&destination=Lahore,Mughalpura"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<p className="text-[17px] font-normal text-white opacity-75  hover:text-red-500">
+								Lahore , Pakistan
+							</p>
+						</a>
+					</div>
+
+					<div className="flex items-center mt-[1rem] space-x-2">
+						<a
+							href="https://mail.google.com/mail/?view=cm&fs=1&to=talhashabbir109@gmail.com"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="hover:text-white"
+						>
+							<EnvelopeIcon className="w-[1rem] h-[1rem] text-red-500" />
+						</a>
+						<a
+							href="https://mail.google.com/mail/?view=cm&fs=1&to=talhashabbir109@gmail.com"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="hover:text-white"
+						>
+							<p className="text-[17px] font-normal text-white hover:text-red-500 opacity-75">
+								talhashabbir109@gmail.com
+							</p>
+						</a>
+					</div>
+
+					<div className="flex items-center mt-[1rem] space-x-2">
+						<a
+							href="https://wa.me/+923404520191"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="hover:text-white"
+						>
+							<PhoneIcon className="w-[1rem] h-[1rem] text-red-500" />
+						</a>
+						<a
+							href="https://wa.me/+923404520191"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<p className="text-[17px] font-normal text-white hover:text-red-500 opacity-75">
+								+92 340 4520191
+							</p>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div className="mt-[1.4rem] w-[80%] mx-auto text-white opacity-70">
+				&#169; Compyright M.Talha 2025
+			</div>
+		</div>
+	);
+};
+
+export default Footer;
