@@ -26,6 +26,16 @@ const Footer = () => {
 					</h1>
 					<p className="text-[15px] text-white opacity-80 mb-[1rem] cursor-pointer hover:text-red-500">
 						<Link
+							to="hero"
+							smooth={true}
+							duration={500}
+							className=" cursor-pointer"
+						>
+							Home
+						</Link>
+					</p>
+					<p className="text-[15px] text-white opacity-80 mb-[1rem] cursor-pointer hover:text-red-500">
+						<Link
 							to="about"
 							smooth={true}
 							duration={500}
@@ -35,13 +45,34 @@ const Footer = () => {
 						</Link>
 					</p>
 					<p className="text-[15px] text-white opacity-80 mb-[1rem] cursor-pointer hover:text-red-500">
-						Services
+						<Link
+							to="services"
+							smooth={true}
+							duration={500}
+							className=" cursor-pointer"
+						>
+							Services
+						</Link>
 					</p>
 					<p className="text-[15px] text-white opacity-80 mb-[1rem] cursor-pointer hover:text-red-500">
-						Project
+						<Link
+							to="blog"
+							smooth={true}
+							duration={500}
+							className=" cursor-pointer"
+						>
+							Blog
+						</Link>
 					</p>
-					<p className="text-[15px] text-white opacity-80 mb-[1rem] cursor-pointer hover:text-red-400">
-						Contact
+					<p className="text-[15px] text-white opacity-80 mb-[1rem] cursor-pointer hover:text-red-500">
+						<Link
+							to="contact"
+							smooth={true}
+							duration={500}
+							className=" cursor-pointer"
+						>
+							Contact
+						</Link>
 					</p>
 				</div>
 				<div className="lg:mx-auto">
