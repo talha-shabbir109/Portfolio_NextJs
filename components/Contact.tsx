@@ -2,35 +2,43 @@ import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
-	const form = useRef();
-	const [message, setMessage] = useState("");
+	const form = useRef<HTMLFormElement>(null); // Ref for the form
+	const [message, setMessage] = useState<string>(""); // State to handle user messages
 
-	const sendEmail = (e) => {
+	const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 
-		emailjs
-			.sendForm(
-				"service_7ktdu9o", // ✅ Your Service ID
-				"template_0zmp6z6", // 🔹 Your Template ID
-				form.current,
-				"wvzMkg8e394uRH1nR" // 🔹 Your Public Key
-			)
-			.then(
-				(result) => {
-					console.log("✅ Email Sent:", result.text);
-					setMessage("✅ Message sent successfully!");
-					form.current.reset(); // Reset the form after sending
-				},
-				(error) => {
-					console.log("❌ Error:", error.text);
-					setMessage("❌ Failed to send message. Please try again.");
-				}
-			);
+		if (form.current) {
+			emailjs
+				.sendForm(
+					"service_7ktdu9o",
+					"template_0zmp6z6",
+					form.current,
+					"wvzMkg8e394uRH1nR"
+				)
+				.then(
+					(result) => {
+						console.log("✅ Email Sent:", result.text);
+						setMessage("✅ Message sent successfully!");
+
+						if (form.current) {
+							form.current.reset();
+						}
+					},
+					(error) => {
+						console.error("❌ Error:", error.text);
+						setMessage("❌ Failed to send message. Please try again.");
+					}
+				);
+		} else {
+			setMessage("❌ Error: Unable to access form. Please refresh the page.");
+		}
 	};
 
 	return (
 		<div className="pt-[5rem] pb-[3rem] bg-gray-900">
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-[2rem] items-center w-[80%] mx-auto">
+				{/* Text Section */}
 				<div>
 					<p className="heading__mini">Get in Touch</p>
 					<h1 className="heading__primary">
@@ -43,6 +51,8 @@ const Contact = () => {
 						life!
 					</p>
 				</div>
+
+				{/* Form Section */}
 				<div>
 					<form ref={form} onSubmit={sendEmail}>
 						<div className="grid grid-cols-1 sm:grid-cols-2 gap-[1rem] items-center">
@@ -71,7 +81,7 @@ const Contact = () => {
 						<textarea
 							placeholder="Message"
 							name="message"
-							className="py-[0.7rem] mb-[1.5rem] w-full outline-none text-white bg-gray-800 px-4"
+							className="py-[0.7rem] mb-[1.5rem] w-full outline-none text-white bg-gray-800 px-4 rounded-md"
 							rows={4}
 							required
 						></textarea>
@@ -82,6 +92,7 @@ const Contact = () => {
 							Submit
 						</button>
 					</form>
+					{/* Display success or error message */}
 					{message && <p className="text-white mt-2">{message}</p>}
 				</div>
 			</div>
