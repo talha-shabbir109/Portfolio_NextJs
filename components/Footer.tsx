@@ -134,7 +134,7 @@ const Footer = () => {
 							rel="noopener noreferrer"
 						>
 							<p className="text-[17px] font-normal text-white hover:text-red-500 opacity-75">
-								+92 340 4520191
+								+92-340-4520191
 							</p>
 						</a>
 					</div>
