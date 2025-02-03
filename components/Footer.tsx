@@ -141,7 +141,7 @@ const Footer = () => {
 				</div>
 			</div>
 			<div className="mt-[1.4rem] w-[80%] mx-auto text-white opacity-70">
-				&#169; Compyright M.Talha 2025
+				&#169; Copyright M.Talha 2025
 			</div>
 		</div>
 	);
